@@ -24,7 +24,7 @@ A simple, interactive, keyboard-driven Pomodoro timer for the terminal.
 If you have Go installed, you can install it directly:
 
 ```bash
-go install github.com/nirabyte/pomodoro-cli@latest
+go install github.com/nirabyte/pomo@latest
 ```
 
 ### Option 2: Build from Source
