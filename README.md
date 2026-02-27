@@ -32,7 +32,7 @@ go install github.com/nirabyte/pomo@latest
 Clone the repo and build the binary.
 
 ```bash
-git clone https://github.com/nirabyte/pomodoro-cli.git
+git clone https://github.com/niraletter/pomodoro-cli.git
 cd pomo
 go build -o pomo main.go
 ```
@@ -50,7 +50,7 @@ make clean        # Remove all built binaries
 make help         # Show available commands
 ```
 
-*Builds are optimized for size using `-ldflags="-s -w"` and `-trimpath` flags.*
+_Builds are optimized for size using `-ldflags="-s -w"` and `-trimpath` flags._
 
 ## Usage
 
@@ -122,6 +122,7 @@ source ~/.zshrc
 Bind keyboard shortcuts in your window manager:
 
 ### Hyprland (`~/.config/hypr/hyprland.conf`)
+
 ```bash
 # Pomodoro shortcuts
 bind = $mainMod, P, exec, pomo 25m 5m 4
@@ -130,6 +131,7 @@ bind = $mainMod CTRL, P, exec, pomo 15m 3m 6
 ```
 
 ### i3/Sway (`~/.config/i3/config` or `~/.config/sway/config`)
+
 ```bash
 # Pomodoro shortcuts
 bindsym $mod+p exec pomo 25m 5m 4
@@ -141,25 +143,23 @@ bindsym $mod+Ctrl+p exec pomo 15m 3m 6
 
 ### Setup Screen
 
-| Key                 | Action                 |
-| :------------------ | :--------------------- |
-| `TAB`               | Switch inputs          |
-| `Mouse wheel`       | Change values (focused input) |
-| `ENTER`             | Start Timer            |
-| `a`                 | Toggle Autobreak       |
-| `q`                 | Quit                   |
+| Key           | Action                        |
+| :------------ | :---------------------------- |
+| `TAB`         | Switch inputs                 |
+| `Mouse wheel` | Change values (focused input) |
+| `ENTER`       | Start Timer                   |
+| `a`           | Toggle Autobreak              |
+| `q`           | Quit                          |
 
 ### Timer Screen
 
-| Key       | Action                   |
-| :-------- | :----------------------- |
-| `SPACE`   | Pause / Resume           |
-| `s`       | **Skip** current session |
-| `↑` / `↓` | +/- 1 minute             |
-| `Mouse wheel` | +/- 1 minute         |
-| `q`       | Quit                     |
-
-
+| Key           | Action                   |
+| :------------ | :----------------------- |
+| `SPACE`       | Pause / Resume           |
+| `s`           | **Skip** current session |
+| `↑` / `↓`     | +/- 1 minute             |
+| `Mouse wheel` | +/- 1 minute             |
+| `q`           | Quit                     |
 
 ### Built With
 

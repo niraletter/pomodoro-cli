@@ -1,4 +1,4 @@
-module github.com/nirabyte/pomo
+module github.com/niraletter/pomo
 
 go 1.25.4
 
