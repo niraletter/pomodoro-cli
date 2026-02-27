@@ -716,7 +716,15 @@ func (m model) viewPopup() string {
 }
 
 func main() {
+	var help = flag.Bool("help", false, "Show help")
+	var h = flag.Bool("h", false, "Show help")
 	flag.Parse()
+
+	if *help || *h {
+		printUsage()
+		return
+	}
+
 	args := flag.Args()
 	var w, b, s string
 	if len(args) > 0 {
@@ -732,4 +740,30 @@ func main() {
 	if _, err := p.Run(); err != nil {
 		fmt.Printf("Error: %v", err)
 	}
+}
+
+func printUsage() {
+	fmt.Println("Pomodoro CLI - A simple Pomodoro timer for the terminal")
+	fmt.Println()
+	fmt.Println("USAGE:")
+	fmt.Println("  pomo                    # Interactive mode")
+	fmt.Println("  pomo [work] [break] [sessions]  # Quick start")
+	fmt.Println()
+	fmt.Println("OPTIONS:")
+	fmt.Println("  -h, --help              # Show this help")
+	fmt.Println()
+	fmt.Println("EXAMPLES:")
+	fmt.Println("  pomo                    # Start interactive setup")
+	fmt.Println("  pomo 25m                # 25min work, 5min break, 4 sessions")
+	fmt.Println("  pomo 50m 10m            # 50min work, 10min break, 4 sessions")
+	fmt.Println("  pomo 45m 15m 6          # 45min work, 15min break, 6 sessions")
+	fmt.Println()
+	fmt.Println("CONTROLS (in timer mode):")
+	fmt.Println("  SPACE                   # Pause/Resume")
+	fmt.Println("  s                       # Skip current session")
+	fmt.Println("  ↑/↓                     # Adjust time ±1 minute")
+	fmt.Println("  ESC                     # Return to setup menu")
+	fmt.Println("  q                       # Quit")
+	fmt.Println()
+	fmt.Println("For more information, see: https://github.com/yourusername/pomodoro-cli")
 }
